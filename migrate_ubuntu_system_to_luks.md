@@ -1,9 +1,11 @@
-### How to secure an existing Ubuntu (20.04) installation using full disc encryption (LUKS) alongside Windows installation (UEFI/BIOS)
+### How to secure an existing Ubuntu (20.04) installation using full disc encryption (LUKS)
 
 1. Backup complete drive using CloneZilla (for worst case scenario)
-1. Backup linux partition using rsync
 
-1. Create unencrypted boot partition using GParted. ESP should already exist (ignore this for BIOS mode).
+1. Using GParted
+- Shrink linux partition by 632MB.
+- Create unencrypted boot partition using GParted (ext4, 512MB).
+- Create ESP (EFI system partition) (fat32, 120MB, boot flag set)
 
 1. Find its name using ```lsblk``` (let's call it ***/dev/sdaZ*** from now on)
 
