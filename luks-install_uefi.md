@@ -1,4 +1,4 @@
-### How to install Ubuntu (20.04) using full disc encryption (LUKS) alongside an already existing Windows installation (UEFI/BIOS)
+### How to install Ubuntu (20.04) using full disc encryption (LUKS) alongside an already existing Windows installation
 
 1. Boot Ubuntu Live CD
 1. shrink windows partition
@@ -7,7 +7,7 @@
   - linux (exf4, as big as possible)
 
 
-1. There should already be an ESP partition (Only UEFI, ignore for BIOS mode)
+1. There should already be an ESP partition
   - esp (fat32, EFI system parition, 120MB)
 
 1. Find name of partition for linux
@@ -41,7 +41,7 @@ sudo mkfs.ext4 /dev/mapper/systempartition
 1. Assign mount points
   - Choose ext4 for /dev/mapper/systempartition and mount it at /
   - Choose ext4 for /dev/sda2 and mount it at /boot
-  - ESP partition should already been assigned correctly (Only UEFI, ignore for BIOS mode)
+  - ESP partition should already been assigned correctly
 
 1. "continue testing"
 
@@ -53,7 +53,7 @@ sudo mount /dev/mapper/sda3 /mnt
 1. Mount boot critical paritions
 ```
 sudo mount /dev/sda2 /mnt/boot (has boot flag, ext4)
-sudo mount /dev/sda1 /mnt/boot/efi (vfat) (Only UEFI, ignore for BIOS mode)
+sudo mount /dev/sda1 /mnt/boot/efi (vfat)
 ```
 
 1. Assign mount points for ```chroot```
