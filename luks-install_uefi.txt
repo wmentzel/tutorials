@@ -1,21 +1,21 @@
 0) Boot Ubuntu Live CD
 1) shrink windows partition
-2) create two new partitions 
+2) create two new partitions
 - linux (exf4, as big as possible)
-- boot (fat32, boot flag)
-
+- boot (fat32/ext4, boot flag set, 256MB-768MB)
+- esp (fat32, EFI system parition, 120MB)
 2.1) lsblk
-3) cryptsetup -v luksFormat /dev/sda2
+3) sudo cryptsetup -v luksFormat /dev/sda2
 4) sudo cryptsetup luksOpen /dev/sda2 sda2-dec
 5) sudo mkfs.ext4 /dev/mapper/sda2-dec
 
-6) install ubuntu 
+6) install ubuntu
 
 encrypted decrypted partition -> /
 boot parition -> /boot
 esp -> /boot/efi
 
-7) "continue testing" 
+7) "continue testing"
 8) mount a lot of stuff, then chroot...
 
 sudo mount /dev/mapper/sda2-dec /mnt
