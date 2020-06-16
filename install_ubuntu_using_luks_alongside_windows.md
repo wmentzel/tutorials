@@ -3,12 +3,12 @@
 1. Boot Ubuntu Live CD
 1. shrink windows partition
 1. create two new partitions out of new unallocated space
-  - boot (fat32/ext4, boot flag set, 256MB-768MB)
+  - boot (fat32/ext4, boot flag set, 512MB)
   - linux (exf4, as big as possible)
 
 
 1. There should already be an ESP partition
-  - esp (fat32, EFI system parition, 120MB)
+  - esp (fat32, EFI system parition, 175MB, boot flag set)
 
 1. Find name of partition for linux
 ```

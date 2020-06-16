@@ -5,7 +5,9 @@
 1. Using GParted
 - Shrink linux partition by 632MB.
 - Create unencrypted boot partition using GParted (ext4, 512MB).
-- Create ESP (EFI system partition) (fat32, 120MB, boot flag set)
+
+1. There should already be an ESP partition
+  - esp (fat32, EFI system parition, 175MB, boot flag set)
 
 1. Find its name using ```lsblk``` (let's call it ***/dev/sdaZ*** from now on)
 

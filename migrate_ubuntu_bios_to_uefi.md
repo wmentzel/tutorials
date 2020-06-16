@@ -1,12 +1,12 @@
 ### How to migrate Ubuntu (18.04) from BIOS (legacy mode) to UEFI
 
-1. Change from legacy to EFI
+1. Change your system firmware from (legacy) BIOS to EFI mode
 
 1. Boot Ubuntu Live CD
 
-1. Create ESP partition using GParted
-  - fat32
-  - 175MB
+1. Create ESP (EFI system partition) using GParted
+  - filesystem: fat32
+  - size: 175MB
   - flags: boot, esp
 
 1. Find out UUID of newly created esp
