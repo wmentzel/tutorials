@@ -90,10 +90,22 @@
     systempartition UUID=XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX	none	luks
     ```
 
-1. chroot
+1. Assign mount points for ```chroot```
 
-1. sudo initramfs -u
+```
+sudo mount /dev/sda3 /mnt/linux/boot
+sudo mount /dev/sda1 /mnt/linux/boot/efi
 
-1. update-grub
+cd /mnt/linux
+sudo mount --bind /sys sys
+sudo mount --bind /dev dev
+sudo mount --bind /run run
+sudo mount --bind /proc proc
+sudo chroot /mnt/linux
+```
+
+1. ```sudo initramfs -u```
+
+1. ```update-grub```
 
 1. restart
