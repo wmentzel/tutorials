@@ -3,13 +3,18 @@
 1. Backup complete drive using CloneZilla (for worst case scenario)
 
 1. Using GParted
-- Shrink linux partition by 632MB.
+- Shrink linux partition by 512MB.
 - Create unencrypted boot partition using GParted (ext4, 512MB).
 
-1. There should already be an ESP partition
-  - esp (fat32, EFI system parition, 175MB, boot flag set)
+1. There should already be an ESP (EFI system partition)
+  - filesystem: fat32
+  - size: ~175MB
+  - flags: boot, esp
 
-1. Find its name using ```lsblk``` (let's call it ***/dev/sdaZ*** from now on)
+1. Find out what is what using ```lsblk```
+
+  **This will be the mapping for further steps. The names are most likely different, depending on your system: ESP = sda1, linux partition = sda2, boot partition = sda3, backup partition sdb1**
+
 
 1. Create directories for mounting
 ```
@@ -20,9 +25,9 @@ sudo mkdir /mnt/backup
 
 1. Mount drives
 ```
-sudo mount /dev/sdZ /mnt/boot
-sudo mount /dev/sdX /mnt/linux -o ro, noload
-sudo mount /dev/sdY /mnt/backup
+sudo mount /dev/sda3 /mnt/boot
+sudo mount /dev/sda2 /mnt/linux -o ro, noload
+sudo mount /dev/sdb1 /mnt/backup
 ```
 
 1. Copy contents of /boot to new partition (Note the trailing "/")
@@ -30,12 +35,12 @@ sudo mount /dev/sdY /mnt/backup
 sudo rsync -axHAWXS --numeric-ids --info=progress2 /boot/ /mnt/boot/
 ```
 
-1. Remove /mnt/boot directory content, we have it on its own partition now
+1. Remove /mnt/boot directory content, because it resides on its own partition now.
 ```
 sudo rm -rf /mnt/boot/*
 ```
 
-1. Make Linux mount the boot partition at startup, by adding the following line to /etc/fstab
+1. Make linux mount the boot partition at startup, by adding the following line to /etc/fstab
 ```
 UUID=XXX-XXX-XXX /boot ext4 defaults 0 2
 ```
@@ -52,17 +57,17 @@ sudo diff -r --no-dereference /mnt/linux/ /mnt/backup/
 
 1. Unmount linux partition
 ```
-sudo umount /dev/sdaX
+sudo umount /dev/sda2
 ```
 
 1. Encrypt linux partition
 ```
-sudo cryptsetup -v luksFormat /dev/sdX
+sudo cryptsetup -v luksFormat /dev/sda2
 ```
 
 1. Open encrypted partition. After that there will be a device /dev/mapper/systempartition
 ```
-sudo cryptsetup luksOpen /dev/sdaX systempartition
+sudo cryptsetup luksOpen /dev/sda2 systempartition
 ```
 
 1. Create filesystem
@@ -84,7 +89,7 @@ sudo rsync -axHAWXS --numeric-ids --info=progress2 /mnt/backup/ /dev/linux/
 
 1. Add this line to /etc/crypttab
 ```
-systempartition UUID=jslfdjj-jksldjf-jljsdf-jljsdf	none	luks
+systempartition UUID=XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX	none	luks
 ```
 
 1. chroot

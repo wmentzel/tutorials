@@ -7,14 +7,16 @@
   - linux (exf4, as big as possible)
 
 
-1. There should already be an ESP partition
-  - esp (fat32, EFI system parition, 175MB, boot flag set)
+1. There should already be an ESP (EFI system partition)
+  - filesystem: fat32
+  - size: ~175MB
+  - flags: boot, esp
 
 1. Find name of partition for linux
 ```
 lsblk
 ```
-From now on, I will call the esp partition sda1, the boot partition sda2 and the linux partition sda3. This can be of course different for you, use what ``lsblk`` (list block devices) outputs.
+  **This will be the mapping for further steps. The names are most likely different, depending on your system: ESP = sda1, boot partition = sda2, linux partition = sda3**
 
 1. Encrypt partition
 ```
@@ -36,21 +38,22 @@ sudo mkfs.ext4 /dev/mapper/systempartition
 ```
 
 1. Boot Ubuntu from USB stick/CD
+1. Choose "Install Ubuntu"
 1. During installation choose "Something else" when asked where to install Ubuntu
 
 1. Assign mount points
   - Choose ext4 for /dev/mapper/systempartition and mount it at /
   - Choose ext4 for /dev/sda2 and mount it at /boot
-  - ESP partition should already been assigned correctly
+  - ESP partition should already be assigned correctly
 
-1. "continue testing"
+1. After the installtion is done click "Continue testing".
 
-1. Mount the linux system partition
+1. Mount the linux system partition.
 ```
-sudo mount /dev/mapper/sda3 /mnt
+sudo mount /dev/mapper/systempartition /mnt
 ```
 
-1. Mount boot critical paritions
+1. Mount boot critical paritions.
 ```
 sudo mount /dev/sda2 /mnt/boot (has boot flag, ext4)
 sudo mount /dev/sda1 /mnt/boot/efi (vfat)
@@ -72,7 +75,7 @@ sudo blkid (get UUID)
 ```
 1. Add this line to /etc/crypttab
 ```
-sdb2-enc UUID=jslfdjj-jksldjf-jljsdf-jljsdf	none	luks
+sdb2-enc UUID=XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX	none	luks
 ```
 
 1. ```update-initramfs -u```

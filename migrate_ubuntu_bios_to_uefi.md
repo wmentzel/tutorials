@@ -14,14 +14,20 @@
 blkid
 ```
 
-1. Mount linux system partitions
+1. Find out what is what
 ```
-sudo mount /dev/sda2 /mnt
+lsblk
+```
+  **From here on I will refer to the linux partion as sda1 and to the ESP as sda2**
+
+1. Mount linux system partition
+```
+sudo mount /dev/sda1 /mnt
 ```
 
-1. Mount it on startup. Add the following line to ```/mnt/etc/fstab```
+1. Mount ESP during boot. Add the following line to ```/mnt/etc/fstab```
 ```
-UUID=688A-E900  /boot/efi       vfat    umask=0077      0       1
+UUID=XXXX-XXXX  /boot/efi       vfat    umask=0077      0       1
 ```
 
 1. Assign mount points for ```chroot```
@@ -36,12 +42,14 @@ sudo mount --bind /proc proc
 sudo chroot /mnt
 ```
 
-1. Install GRUB for EFI
+1. Install GRUB for EFI package
 ```
 apt install grub-efi
 ```
 
-1. Reinstall grub
-```grub-install --target=x86_64-efi /dev/sdb```
+1. Reinstall GRUB
+```grub-install --target=x86_64-efi /dev/sda```
+
+  **(Important: Use the whole disc sda and not a specific partition e.g. sda1)**
 
 1. Reboot
