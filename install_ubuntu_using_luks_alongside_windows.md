@@ -54,8 +54,8 @@
 
 1. Mount boot critical paritions.
     ```
-    sudo mount /dev/sda2 /mnt/boot (has boot flag, ext4)
-    sudo mount /dev/sda1 /mnt/boot/efi (vfat)
+    sudo mount /dev/sda2 /mnt/boot
+    sudo mount /dev/sda1 /mnt/boot/efi
     ```
 
 1. Assign mount points for ```chroot```
