@@ -4,7 +4,7 @@
 
 1. Boot Ubuntu Live CD
 
-1. To make sure that you really bootet in EFI mode the following directory should exist: */sys/firmware/efi*. If not don't continue.
+1. To make sure that you really booted in EFI mode the following directory should exist: */sys/firmware/efi*. If not don't continue.
 
 1. Create ESP (EFI system partition) using GParted
     - filesystem: fat32
