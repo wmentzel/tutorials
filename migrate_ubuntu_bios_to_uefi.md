@@ -33,7 +33,7 @@
 1. Assign mount points for ```chroot```.
     ```
     sudo mkdir /mnt/boot/efi
-    sudo mount /dev/sda2 /mnt/boot/efi (vfat)
+    sudo mount /dev/sda2 /mnt/boot/efi
     cd /mnt
     sudo mount --bind /sys sys
     sudo mount --bind /dev dev

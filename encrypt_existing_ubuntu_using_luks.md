@@ -71,7 +71,7 @@
 
 1. Create filesystem
     ```
-    sudo make.ext4 /dev/mapper/systempartition
+    sudo mkfs.ext4 /dev/mapper/systempartition
     ```
 
 1. Mount the new drive

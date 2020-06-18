@@ -75,7 +75,7 @@
 
 1. Add this line to /etc/crypttab
     ```
-    sdb2-enc UUID=XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX	none	luks
+    systempartition UUID=XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX	none	luks
     ```
 
 1. ```update-initramfs -u```
