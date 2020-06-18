@@ -22,11 +22,11 @@
     sudo cryptsetup -v luksFormat /dev/sda3
     ```
 
-1. Type "YES"
+1. Type "YES".
 
-1. Type in a good passphrase
+1. Type in a good passphrase.
 
-1. Open the encrypted partition. The unecrypted device will be /dev/mapper/systempartition
+1. Open the encrypted partition. The unecrypted device will be */dev/mapper/systempartition*
     ```
     sudo cryptsetup luksOpen /dev/sda3 systempartition
     ```
@@ -45,7 +45,7 @@
     - Choose ext4 for /dev/sda2 and mount it at /boot
     - ESP partition should already be assigned correctly
 
-1. After the installtion is done click "Continue testing".
+1. After the installation is done click "Continue testing".
 
 1. Mount the linux system partition.
     ```
@@ -58,7 +58,7 @@
     sudo mount /dev/sda1 /mnt/boot/efi
     ```
 
-1. Assign mount points for ```chroot```
+1. Assign mount points for ```chroot```.
     ```
     cd /mnt
     sudo mount --bind /sys sys
@@ -68,7 +68,7 @@
     sudo chroot /mnt
     ```
 
-1. Get the UUID of /dev/sda3 (Ubuntu partition)
+1. Get the UUID of */dev/sda3* (Ubuntu partition)
     ```
     sudo blkid (get UUID)
     ```
@@ -84,7 +84,7 @@
 
 1. You should be presented with the GRUB boot menu
 
-1. Choose ubuntu
+1. Choose Ubuntu
 
 1. Type in passphrase
 

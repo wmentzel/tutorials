@@ -11,7 +11,8 @@
     - size: ~175MB
     - flags: boot, esp
 
-1. Find out what is what using ```lsblk```
+1. Find out what is what using ```lsblk```.
+
     **This will be the mapping for further steps. The names are most likely different, depending on your system: ESP = sda1, linux partition = sda2, boot partition = sda3, backup partition sdb1**
 
 1. Create directories for mounting
@@ -63,7 +64,7 @@
     sudo cryptsetup -v luksFormat /dev/sda2
     ```
 
-1. Open encrypted partition. After that there will be a device /dev/mapper/systempartition
+1. Open encrypted partition. After that there will be a device */dev/mapper/systempartition*
     ```
     sudo cryptsetup luksOpen /dev/sda2 systempartition
     ```
@@ -85,7 +86,7 @@
 
 1. Find out UUID of encrypted device using blkid (block device ids)
 
-1. Add this line to /etc/crypttab
+1. Add this line to */etc/crypttab*
     ```
     systempartition UUID=XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX	none	luks
     ```

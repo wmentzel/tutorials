@@ -9,18 +9,18 @@
     - size: 175MB
     - flags: boot, esp
 
-1. Find out UUID of newly created esp
+1. Find out UUID of newly created ESP.
     ```
     blkid
     ```
 
-1. Find out what is what
+1. Find out what is what.
     ```
     lsblk
     ```
     **From here on I will refer to the linux partion as sda1 and to the ESP as sda2**
 
-1. Mount linux system partition
+1. Mount linux system partition.
     ```
     sudo mount /dev/sda1 /mnt
     ```
@@ -30,7 +30,7 @@
     UUID=XXXX-XXXX  /boot/efi       vfat    umask=0077      0       1
     ```
 
-1. Assign mount points for ```chroot```
+1. Assign mount points for ```chroot```.
     ```
     sudo mkdir /mnt/boot/efi
     sudo mount /dev/sda2 /mnt/boot/efi (vfat)
@@ -42,12 +42,12 @@
     sudo chroot /mnt
     ```
 
-1. Install GRUB for EFI package
+1. Install GRUB for EFI package.
     ```
     apt install grub-efi
     ```
 
-1. Reinstall GRUB
+1. Reinstall GRUB.
     ```grub-install --target=x86_64-efi /dev/sda```
 
     **(Important: Use the whole disc sda and not a specific partition e.g. sda1)**
