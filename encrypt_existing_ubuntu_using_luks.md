@@ -103,9 +103,15 @@
     sudo mount --bind /proc proc
     sudo chroot /mnt/linux
     ```
-
+    
 1. ```sudo initramfs -u```
 
 1. ```update-grub```
+
+1. Make sure cryptsetup is installed on the actual system as well.
+
+    ```
+    apt install cryptsetup
+    ```
 
 1. restart

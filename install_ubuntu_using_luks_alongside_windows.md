@@ -1,12 +1,14 @@
 ### How to install Ubuntu (20.04) using full disc encryption (LUKS) alongside an already existing Windows installation
 
-1. Boot Ubuntu Live CD
-1. shrink windows partition
-1. create two new partitions out of new unallocated space
+1. Boot the Ubuntu Live CD.
+
+1. Shrink Windows partition as much as you like.
+
+1. Create two new partitions out of the new unallocated space.
     - boot (fat32/ext4, boot flag set, 512MB)
     - linux (exf4, as big as possible)
 
-1. There should already be an ESP (EFI system partition)
+1. There should already be an ESP (EFI system partition).
     - filesystem: fat32
     - size: ~175MB
     - flags: boot, esp
@@ -80,12 +82,18 @@
 
 1. ```update-initramfs -u```
 
+1. Make sure cryptsetup is installed on the actual system as well.
+
+    ```
+    apt install cryptsetup
+    ```
+
 1. Reboot
 
-1. You should be presented with the GRUB boot menu
+1. You should be presented with the GRUB boot menu.
 
-1. Choose Ubuntu
+1. Choose "Ubuntu".
 
-1. Type in passphrase
+1. Type in the passphrase.
 
 1. Done
