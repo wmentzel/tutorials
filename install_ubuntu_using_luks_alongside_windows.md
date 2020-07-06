@@ -4,20 +4,26 @@
 
 1. Shrink Windows partition as much as you like.
 
-1. Create two new partitions out of the new unallocated space.
-    - boot (fat32/ext4, boot flag set, 512MB)
-    - linux (exf4, as big as possible)
+1. Create boot partition out of the new unallocated space.
+    - filesystem: FAT32 or ext4
+    - flags: boot
+    - size: 512 MB
+
+1. Create linux system partition out of remaining unallocated space.
+    - filesystem: exf4
+    - size: as big as possible
 
 1. There should already be an ESP (EFI system partition).
     - filesystem: fat32
     - size: ~175MB
     - flags: boot, esp
 
-1. Find name of partition for linux
+1. Find the name of the future linux partition:
+
     ```
     lsblk
     ```
-    **This will be the mapping for further steps. The names are most likely different, depending on your system: ESP = sda1, boot partition = sda2, linux partition = sda3**
+    **The names are most likely different, depending on your system, but this will be the mapping for further steps: ESP = sda1, boot partition = sda2, linux partition = sda3**
 
 1. Encrypt partition
     ```
@@ -39,12 +45,14 @@
     ```
 
 1. Boot Ubuntu from USB stick/CD
+
 1. Choose "Install Ubuntu"
+
 1. During installation choose "Something else" when asked where to install Ubuntu
 
 1. Assign mount points
-    - Choose ext4 for /dev/mapper/systempartition and mount it at /
-    - Choose ext4 for /dev/sda2 and mount it at /boot
+    - Choose ext4 for */dev/mapper/systempartition* and mount it at */*
+    - Choose ext4 for */dev/sda2* and mount it at */boot*
     - ESP partition should already be assigned correctly
 
 1. After the installation is done click "Continue testing".
@@ -75,12 +83,16 @@
     sudo blkid (get UUID)
     ```
 
-1. Add this line to /etc/crypttab
+1. Add this line to */etc/crypttab*:
     ```
     systempartition UUID=XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX	none	luks
     ```
 
-1. ```update-initramfs -u```
+1. Update the initial RAM filesystem:
+
+    ```
+    update-initramfs -u
+    ```
 
 1. Make sure cryptsetup is installed on the actual system as well.
 
@@ -94,6 +106,6 @@
 
 1. Choose "Ubuntu".
 
-1. Type in the passphrase.
+1. When asked for the passphrase, type it in.
 
-1. Done
+1. Done, Ubuntu should start as before.

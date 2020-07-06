@@ -8,7 +8,7 @@
 
 1. Create ESP (EFI system partition) using GParted
     - filesystem: fat32
-    - size: 175MB
+    - size: 175 MB
     - flags: boot, esp
 
 1. Find out UUID of newly created ESP.
@@ -50,8 +50,10 @@
     ```
 
 1. Reinstall GRUB.
-    ```grub-install --target=x86_64-efi /dev/sda```
+    ```
+    grub-install --target=x86_64-efi /dev/sda
+    ```
 
-    **(Important: Use the whole disc sda and not a specific partition e.g. sda1)**
+    **Important: Use the whole disc *sda* and not a specific partition like *sda1***.
 
 1. Reboot
