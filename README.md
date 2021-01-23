@@ -12,6 +12,8 @@
 
 1. [Ubuntu/Linux useful terminal commands](useful_terminal_commands.md)
 
+1. [Fix GRUB](fix_grub.md)
+
 # Sources
 
 - [Copy entire file system hierarchy from one drive to another](https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another)
