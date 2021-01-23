@@ -10,6 +10,8 @@
 
 1. [Copy Windows 10 UEFI boot files from to ESP](copy_windows_10_uefi_boot_files_to_esp.md)
 
+1. [Ubuntu/Linux useful terminal commands](useful_terminal_commands.md)
+
 # Sources
 
 - [Copy entire file system hierarchy from one drive to another](https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another)
