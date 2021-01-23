@@ -108,7 +108,7 @@
 
 1. Update the initial RAM filesystem:
     ```
-    initramfs -u
+    update-initramfs -u
     ```
 
 1. Update booloader:
