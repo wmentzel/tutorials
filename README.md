@@ -1,10 +1,10 @@
 # Tutorials
 
-1. [How to migrate Ubuntu (18.04) from BIOS (legacy mode) to UEFI](migrate_ubuntu_bios_to_uefi.md)
+1. [Migrate Ubuntu (18.04) from BIOS (legacy mode) to UEFI](migrate_ubuntu_bios_to_uefi.md)
 
-1. [ How to secure an existing Ubuntu (20.04) installation using full disc encryption (LUKS)](encrypt_existing_ubuntu_using_luks.md)
+1. [Secure an existing Ubuntu (20.04) installation using full disc encryption (LUKS)](encrypt_existing_ubuntu_using_luks.md)
 
-1. [How to install Ubuntu (20.04) using full disc encryption (LUKS) alongside an already existing Windows installation](install_ubuntu_using_luks_alongside_windows.md)
+1. [Install Ubuntu (20.04) using full disc encryption (LUKS) alongside an already existing Windows installation](install_ubuntu_using_luks_alongside_windows.md)
 
 1. [Disable Bitlocker in Windows 10 command line](disable_bitlocker_in_windows_10_via_command_line.md)
 

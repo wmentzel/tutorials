@@ -1,6 +1,16 @@
-### 
+### Useful terminal commands
 
 This is a random collection of terminal commands I need regularly. It is mostly meant for me to quickly lookup those commands. Maybe some are helpful for other people as well.
+
+Show USB devices
+
+    lsusb
+
+Securely delete a harddrive
+
+    dd if=/dev/zero of=/dev/sdX bs=4096 status=progress
+    dd if=/dev/urandom of=/dev/sdX bs=4096 status=progress
+
 
 Sign an APK file
 
@@ -96,7 +106,7 @@ Show discs sizes
 
 Show all block devices
 
-    lsblk
+    lsblk -a
 
 Copy files recursively with all attribues (resolve symbolic links)
 
