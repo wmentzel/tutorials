@@ -13,6 +13,8 @@
 1. [Ubuntu/Linux useful terminal commands](useful_terminal_commands.md)
 
 1. [Fix GRUB](fix_grub.md)
+   
+1. [Partition block device](partition_block_device.md)
 
 # Sources
 
