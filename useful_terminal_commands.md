@@ -2,6 +2,15 @@
 
 This is a random collection of terminal commands I need regularly. It is mostly meant for me to quickly lookup those commands. Maybe some are helpful for other people as well.
 
+Manage wireless networks
+
+    nmtui
+
+List all available wifi networks
+
+    nmcli d wifi list
+
+
 Show USB devices
 
     lsusb
