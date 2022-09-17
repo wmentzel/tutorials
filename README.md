@@ -24,3 +24,5 @@
 - [Dual Boot Ubuntu with LUKS alongside Windows](https://www.youtube.com/watch?v=IfJ6HkMxgEY&feature=youtu.be)
 - [How to mount a hard disk as read-only from the terminal](https://askubuntu.com/questions/296331/how-to-mount-a-hard-disk-as-read-only-from-the-terminal)
 - [Recursively compare two directories with diff -r without output on broken links](https://unix.stackexchange.com/questions/49496/recursively-compare-two-directories-with-diff-r-without-output-on-broken-links)
+- [Windows 10 - Repair EFI Partition](https://www.youtube.com/watch?v=l_I4K2-Rr_Y)
+- [4 Ways to Remove or Disable BitLocker Drive Encryption](https://www.isunshare.com/windows-10/4-ways-to-remove-or-disable-bitlocker-encryption-on-windows-10.html)

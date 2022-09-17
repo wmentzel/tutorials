@@ -35,7 +35,3 @@
         bcdboot C:\Windows /s S: /f UEFI
 
 1. Done
-
-##### Sources
-
-- [Windows 10 - Repair EFI Partition](https://www.youtube.com/watch?v=l_I4K2-Rr_Y)
