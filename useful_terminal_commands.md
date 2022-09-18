@@ -137,3 +137,8 @@ Add repository to package sources
 Generate SSH key pair
 
     ssh-keygen –t rsa -b 4096 –C <email address
+
+Create GRUB config
+
+    grub-mkconfig -o /boot/grub/grub.cfg
+
