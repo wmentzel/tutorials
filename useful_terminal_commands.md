@@ -154,3 +154,11 @@ Remove kernels
 
     sudo apt-get purge linux-headers-5.12.0-051200-generic
 
+Show networks and their UUID
+
+    nmcli c
+
+Connect to network with UUID
+
+    nmcli c up "8aca5106-93c4-4d67-8c9e-2b9dc96f51d3"
+
