@@ -16,6 +16,8 @@
    
 1. [Partition block device](partition_block_device.md)
 
+1. [Useful Git commands](useful_git_commands.md)
+
 # Sources
 
 - [Copy entire file system hierarchy from one drive to another](https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another)
