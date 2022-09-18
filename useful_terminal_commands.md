@@ -142,3 +142,15 @@ Create GRUB config
 
     grub-mkconfig -o /boot/grub/grub.cfg
 
+List installed packages
+
+    dpkg --list | grep linux-image
+
+Install packages from directory
+
+    sudo dpkg -i *.deb
+
+Remove kernels
+
+    sudo apt-get purge linux-headers-5.12.0-051200-generic
+
