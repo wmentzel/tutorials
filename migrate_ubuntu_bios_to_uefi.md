@@ -4,12 +4,13 @@
 
 1. Boot Ubuntu Live CD
 
-1. To make sure that you really booted in EFI mode the following directory should exist: */sys/firmware/efi*. If not don't continue.
+1. To make sure that you really booted in EFI mode the following directory should exist: */sys/firmware/efi*. If not
+   don't continue.
 
 1. Create ESP (EFI system partition) using GParted
-    - filesystem: fat32
-    - size: 175 MB
-    - flags: boot, esp
+   - filesystem: fat32
+   - size: 175 MB
+   - flags: boot, esp
 
 1. Find out UUID of newly created ESP.
     ```
@@ -20,7 +21,7 @@
     ```
     lsblk
     ```
-    **From here on I will refer to the linux partion as sda1 and to the ESP as sda2**
+   **From here on I will refer to the linux partion as sda1 and to the ESP as sda2**
 
 1. Mount linux system partition.
     ```
@@ -54,6 +55,6 @@
     grub-install --target=x86_64-efi /dev/sda
     ```
 
-    **Important: Use the whole disc *sda* and not a specific partition like *sda1***.
+   **Important: Use the whole disc *sda* and not a specific partition like *sda1***.
 
 1. Reboot

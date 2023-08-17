@@ -1,6 +1,7 @@
 ### Useful terminal commands
 
-This is a random collection of terminal commands I need regularly. It is mostly meant for me to quickly lookup those commands. Maybe some are helpful for other people as well.
+This is a random collection of terminal commands I need regularly. It is mostly meant for me to quickly lookup those
+commands. Maybe some are helpful for other people as well.
 
 Manage wireless networks
 
@@ -10,7 +11,6 @@ List all available wifi networks
 
     nmcli d wifi list
 
-
 Show USB devices
 
     lsusb
@@ -19,7 +19,6 @@ Securely delete a harddrive
 
     dd if=/dev/zero of=/dev/sdX bs=4096 status=progress
     dd if=/dev/urandom of=/dev/sdX bs=4096 status=progress
-
 
 Sign an APK file
 
@@ -97,7 +96,7 @@ Mount drive
 
     mount /dev/sda1 /mnt/backup
 
-Manage system cronjobs 
+Manage system cronjobs
 
     crontab -e
 

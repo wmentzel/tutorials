@@ -9,13 +9,14 @@
     - size: 512MB
 
 1. There should already be an ESP (EFI system partition)
-    - filesystem: FAT32
-    - size: ~175 MB
-    - flags: boot, esp
+   - filesystem: FAT32
+   - size: ~175 MB
+   - flags: boot, esp
 
 1. Find out what is what using ```lsblk```.
 
-    **The names are most likely different, depending on your system, but this will be the mapping for further steps: ESP = sda1, linux partition = sda2, boot partition = sda3, backup partition sdb1**
+   **The names are most likely different, depending on your system, but this will be the mapping for further steps:
+   ESP = sda1, linux partition = sda2, boot partition = sda3, backup partition sdb1**
 
 1. Create directories for mounting
     ```

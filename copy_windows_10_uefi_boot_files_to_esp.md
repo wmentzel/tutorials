@@ -6,9 +6,9 @@
 
         diskpart
 
-1.  Select the disc with windows (and the EFI partition ) on it
+1. Select the disc with windows (and the EFI partition ) on it
 
-        select disk 0
+       select disk 0
 
 1. List partitions of selected disk
 

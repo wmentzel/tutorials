@@ -14,16 +14,17 @@
     - size: as big as possible
 
 1. There should already be an ESP (EFI system partition).
-    - filesystem: fat32
-    - size: ~175MB
-    - flags: boot, esp
+   - filesystem: fat32
+   - size: ~175MB
+   - flags: boot, esp
 
 1. Find the name of the future linux partition:
 
     ```
     lsblk
     ```
-    **The names are most likely different, depending on your system, but this will be the mapping for further steps: ESP = sda1, boot partition = sda2, linux partition = sda3**
+   **The names are most likely different, depending on your system, but this will be the mapping for further steps:
+   ESP = sda1, boot partition = sda2, linux partition = sda3**
 
 1. Encrypt partition
     ```

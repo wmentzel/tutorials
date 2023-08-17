@@ -1,4 +1,5 @@
-### Fix GRUB 
+### Fix GRUB
+
 #### (after Windows destroyed it for example)
 
     sudo cryptsetup luksOpen /dev/nvme0n1p3 systempartition
