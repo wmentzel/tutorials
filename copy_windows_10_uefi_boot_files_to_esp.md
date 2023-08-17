@@ -1,37 +1,37 @@
 1. Boot windows from USB stick
 
-1. Go to Troubleshoot > Command Prompt
+2. Go to Troubleshoot > Command Prompt
 
-1. List all discs
+3. List all discs
 
         diskpart
 
-1. Select the disc with windows (and the EFI partition ) on it
+4. Select the disc with windows (and the EFI partition ) on it
 
        select disk 0
 
-1. List partitions of selected disk
+5. List partitions of selected disk
 
         list partition
 
-1. Select "SYSTEM" partition
+6. Select "SYSTEM" partition
 
         select partition 1
 
-1. Assign a driver letter
+7. Assign a driver letter
 
         assign letter=S
 
-1. **Optional:** Make sure it is the correct partition
+8. **Optional:** Make sure it is the correct partition
 
         dir S:
 
-1. **Optional:** Make sure windows is mounted at C:
+9. **Optional:** Make sure windows is mounted at C:
 
         dir C:
 
-1. Copy over the UEFI boot files
+10. Copy over the UEFI boot files
 
-        bcdboot C:\Windows /s S: /f UEFI
+         bcdboot C:\Windows /s S: /f UEFI
 
-1. Done
+11. Done

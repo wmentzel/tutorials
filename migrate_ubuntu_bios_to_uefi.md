@@ -2,38 +2,38 @@
 
 1. Change your system firmware from (legacy) BIOS to EFI mode
 
-1. Boot Ubuntu Live CD
+2. Boot Ubuntu Live CD
 
-1. To make sure that you really booted in EFI mode the following directory should exist: */sys/firmware/efi*. If not
+3. To make sure that you really booted in EFI mode the following directory should exist: */sys/firmware/efi*. If not
    don't continue.
 
-1. Create ESP (EFI system partition) using GParted
+4. Create ESP (EFI system partition) using GParted
    - filesystem: fat32
    - size: 175 MB
    - flags: boot, esp
 
-1. Find out UUID of newly created ESP.
+5. Find out UUID of newly created ESP.
     ```
     blkid
     ```
 
-1. Find out what is what.
+6. Find out what is what.
     ```
     lsblk
     ```
    **From here on I will refer to the linux partion as sda1 and to the ESP as sda2**
 
-1. Mount linux system partition.
+7. Mount linux system partition.
     ```
     sudo mount /dev/sda1 /mnt
     ```
 
-1. Mount ESP during boot. Add the following line to ```/mnt/etc/fstab```
+8. Mount ESP during boot. Add the following line to ```/mnt/etc/fstab```
     ```
     UUID=XXXX-XXXX  /boot/efi       vfat    umask=0077      0       1
     ```
 
-1. Assign mount points for ```chroot```.
+9. Assign mount points for ```chroot```.
     ```
     sudo mkdir /mnt/boot/efi
     sudo mount /dev/sda2 /mnt/boot/efi
@@ -45,16 +45,16 @@
     sudo chroot /mnt
     ```
 
-1. Install GRUB for EFI package.
-    ```
-    apt install grub-efi
-    ```
+10. Install GRUB for EFI package.
+     ```
+     apt install grub-efi
+     ```
 
-1. Reinstall GRUB.
-    ```
-    grub-install --target=x86_64-efi /dev/sda
-    ```
+11. Reinstall GRUB.
+     ```
+     grub-install --target=x86_64-efi /dev/sda
+     ```
 
-   **Important: Use the whole disc *sda* and not a specific partition like *sda1***.
+    **Important: Use the whole disc *sda* and not a specific partition like *sda1***.
 
-1. Reboot
+12. Reboot
