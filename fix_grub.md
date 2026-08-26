@@ -17,6 +17,6 @@
 
     sudo chroot /mnt/linux
 
-    update-initramfs -u -k all
+    update-initramfs -u # generate for newest installed kernel only
     grub-install
     grub-update
