@@ -20,3 +20,5 @@
     update-initramfs -u # generate for newest installed kernel only
     grub-install
     grub-update
+
+    sudo efibootmgr -v # check: there should be a ubuntu entry now and it should be the first option
