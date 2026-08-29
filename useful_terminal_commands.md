@@ -3,14 +3,6 @@
 This is a random collection of terminal commands I need regularly. It is mostly meant for me to quickly lookup those
 commands. Maybe some are helpful for other people as well.
 
-Manage wireless networks
-
-    nmtui
-
-List all available wifi networks
-
-    nmcli d wifi list
-
 Show USB devices
 
     lsusb
@@ -19,10 +11,6 @@ Securely delete a harddrive
 
     dd if=/dev/zero of=/dev/sdX bs=4096 status=progress
     dd if=/dev/urandom of=/dev/sdX bs=4096 status=progress
-
-Sign an APK file
-
-    apksigner sign --ks <KEYSTORE_FILE_NAME>.keystore <APK_FILE_NAME>.apk
 
 Get number of lines
 
@@ -44,17 +32,9 @@ Get IP address
 
     hostname -I
 
-Run single test via Gradle
-
-    ./gradlew :modulename:test --tests "package.path.TestClass"
-
 Show installation date of Ubuntu
 
     ls -lt /var/log/installer
-
-Show all shutdown events
-
-    last -x --time-format=full
 
 Find PID of process listening on specific port
 
@@ -137,10 +117,6 @@ Generate SSH key pair
 
     ssh-keygen -t rsa -b 4096 -C <email address>
 
-Create GRUB config
-
-    grub-mkconfig -o /boot/grub/grub.cfg
-
 List installed packages
 
     dpkg --list | grep linux-image
@@ -152,6 +128,14 @@ Install packages from directory
 Remove kernels
 
     sudo apt-get purge linux-headers-5.12.0-051200-generic
+
+Manage wireless networks
+
+    nmtui
+
+List all available wifi networks
+
+    nmcli d wifi list
 
 Show networks and their UUID
 
